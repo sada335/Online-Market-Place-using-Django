@@ -1,0 +1,118 @@
+/* Full-page centering */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #DDEB9D; /* Light greenish background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Makes sure everything is in the middle */
+    text-align: center;
+}
+
+/* Centered container with shadow effect */
+.form-container {
+    width: 400px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Form title */
+.form-container h2 {
+    color: #27667B;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Input fields - Centered */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Labels */
+.input-group label {
+    font-weight: bold;
+    color: #143D60;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 90%;
+    padding: 10px;
+    border: 2px solid #A0C878;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    background: #f8f8f8;
+    transition: 0.3s ease-in-out;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #27667B;
+    outline: none;
+    background: white;
+}
+
+/* Textarea */
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* Checkbox styling */
+.checkbox-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Submit button */
+button {
+    width: 90%;
+    padding: 12px;
+    background: #27667B;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #143D60;
+}
+
+/* Footer Styling - Centered */
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #A0C878;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    border-top: 5px solid #27667B;
+}

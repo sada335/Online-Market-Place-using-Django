@@ -1,0 +1,40 @@
+{% load static %}
+
+{% include 'marketplace/header.html' %}
+<link rel="stylesheet" type="text/css" href="{% static 'marketplace/style.css' %}">
+
+<div class="form-container">
+    <h2>{% if item %}Update{% else %}Create{% endif %} Item</h2>
+    <form method="POST">
+        {% csrf_token %}
+        
+        <div class="input-group">
+            <label for="name">Item Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter item name" value="{{ item.name|default:'' }}" required>
+        </div>
+
+        <div class="input-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" placeholder="Enter item description">{{ item.description|default:'' }}</textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="price">Price ($)</label>
+            <input type="number" id="price" step="0.01" name="price" placeholder="Enter price" value="{{ item.price|default:'' }}" required>
+        </div>
+
+        <div class="input-group">
+            <label for="rating">Rating (out of 5)</label>
+            <input type="number" id="rating" step="0.1" name="rating" placeholder="Enter rating" value="{{ item.rating|default:'' }}" required>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="available" name="available" {% if item.available %}checked{% endif %}>
+            <label for="available">Available</label>
+        </div>
+
+        <button type="submit">Save Item</button>
+    </form>
+</div>
+
+{% include 'marketplace/footer.html' %}
